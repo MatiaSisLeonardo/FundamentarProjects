@@ -1,0 +1,43 @@
+@use "_variables" as *;
+
+
+/*-----Functions*/
+
+@function getColor($property) {
+  @return map-get($m_colors, $property);
+}
+
+@function getTypograph($property) {
+  @return map-get($m_typographs, $property);
+}
+
+
+/*-----Mixins*/
+
+@mixin FlexBox($justify, $align, $gap, $direction:row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin Link($decoration:false, $typograph:getTypograph(link), $text-color:getColor(tx-col)) {
+  cursor: pointer;
+  color: $text-color;
+  font-family: $typograph;
+
+  @if $decoration {
+    text-decoration: underline;
+  } @else {
+    text-decoration: none;
+  }
+}
+
+@mixin Button($backg-col:#9B4BEC, $border:none, $radius:0.3em, $pad:1em, $transition:1s) {
+  background-color: $backg-col;
+  border: $border;
+  border-radius: $radius;
+  padding: $pad;
+  transition: $transition;
+}

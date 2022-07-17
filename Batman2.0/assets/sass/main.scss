@@ -1,0 +1,139 @@
+@use './base' as *;
+@import './reset';
+
+
+body {
+    @include ElementSelected();
+    height: 100%;
+    background-color: #0c0a18;
+}
+
+.container {
+    @include FlexBox(column, center, center, 200px);
+    @include Container();
+
+    &-header {
+        @include FlexBox(column, center, center, 3em);
+        @include ContainerHeader();
+
+        header {
+            @include FlexBox(row, center, center, 12em);
+            width: 100%;
+        
+            h1,
+            h2 {
+                @include Title();
+                transition: .5s;
+            }
+            
+            h1:hover,
+            h2:hover {
+                text-shadow: -3px 8px 5px #ff0022;
+                transition: .5s ease;
+            }
+
+            img {
+                @include Image();
+            }
+        }
+
+        .index {
+            border-top: 3px solid #ff004c;
+            width: 100%;
+
+            ul {
+                @include Grid(1fr 1fr 1fr 1fr 1fr, 1fr 1fr, 1em, 0em, center, center, center, center);
+                @include NoListStyle();
+                margin-top: 2em;
+
+                li > a {
+                    @include UseTextDecoration(false);
+                    @include LinkStyle();
+
+                    &:hover {
+                        @include UseTextDecoration(true);
+                        @include LinkStyle($cl:#ff004c, $size:1em);
+                    }
+                }
+            }
+        }
+    }
+
+    table {
+        @include Table();
+
+        thead {
+
+            tr {
+                th {
+                    padding: 1em 0em;
+                    transition: 1s all;
+
+                    &:hover {
+                        background-color: #ff004cb4;
+                        transition: 1s ease;
+                    }
+
+                    a {
+                        @include LinkStyle($size:1.2em);
+                        @include UseTextDecoration(false);
+
+                        &:hover {
+                            @include LinkStyle($cl:#ffe600, $size:1.2em);
+                        }
+
+                        span {
+                            color: #a6ff00;
+                        }
+                    }
+                }
+            }
+        }
+
+        tbody {
+            background-color: #000;
+
+            tr {
+                transition: 1s all;
+
+                td {
+                    // to center all elements in column like images, text and iframe
+                    text-align: center; 
+                }
+
+                &:hover {
+                    background-color: #11101085;
+                    transition: 1s ease;
+                }
+
+                .mv-cover {
+                    @include Image($height:240px, $width:120px, $radius:1em);
+                }
+
+                .mv-name {
+                    p {
+                        color: #fff;  
+                        font-size: 1.2em;
+                    }
+                }
+                
+                .release-date {
+                    p {
+                        color: #ff004c;
+                        font-size: 1.2em;
+                        
+                        span {
+                            color: #a6ff00;
+                        }
+                    }
+                }       
+                
+                .trailer {
+                    iframe {
+                        @include Iframe($height:100px, $width:100px, $radius:1em);
+                    }
+                }
+            }
+        }
+    }
+}    

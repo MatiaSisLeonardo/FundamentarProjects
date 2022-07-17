@@ -1,0 +1,78 @@
+@use "_base" as *;
+@import "_reset";
+
+
+body {
+  background-color: getColor(backg-col);
+  height: 100%;
+  width: 100%;
+}
+
+
+body .container {
+  @include FlexBox(center, center, 1em, $direction:column);
+  width: 50%;
+  margin: 0 auto;
+
+  section#title {
+    @include FlexBox(center, center, 1em);
+
+    h1 {
+      color: getColor(tx-col);
+      font-family: getTypograph(title);
+      font-size: 2.5em;
+    }
+  }
+
+  figure.image {
+	text-align: center;
+
+    figcaption.my-declaration {
+      color: getColor(tx-col);
+      font-family: getTypograph(legend);
+    }
+  }
+
+  ul.social-medias {
+    list-style: none;
+
+    li.media {
+      button {
+        @include Button($backg-col:transparent, $pad:0.5em 1em);
+        border: 2px solid #9B4BEC;
+        margin: 1.5em 0em;
+
+        a {
+          @include FlexBox(center, center, 2em);
+          @include Link();
+
+          p {
+            font-size: 1.5em;
+          }
+        }
+
+      }
+    }
+  }
+
+  section.github-account-author {
+    button {
+
+      @include Button();
+
+      &:hover {
+        @include Button($backg-col:#BB99DD, $transition:1s ease);
+      }
+
+      a {
+        @include FlexBox(center, center, 2em);
+        @include Link($text-color:#fff);
+
+        p {
+          font-size: 1.2em;
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@use './base' as *;
+@import './reset';
+
+body {
+    background-color: #ff004c;
+}
+
+figure {
+    height: 100vh;
+    padding: 5em;
+    text-align: center;
+}
+

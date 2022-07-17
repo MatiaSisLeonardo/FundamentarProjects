@@ -1,0 +1,100 @@
+/*-----color list of background and text*/
+/*-----main typograph*/
+/*-----Functions*/
+/*-----Mixins*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #FAF7FD;
+  height: 100%;
+  width: 100%;
+}
+
+body .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  width: 50%;
+  margin: 0 auto;
+}
+body .container section#title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+body .container section#title h1 {
+  color: #BB99DD;
+  font-family: "Arial";
+  font-size: 2.5em;
+}
+body .container figure.image {
+  text-align: center;
+}
+body .container figure.image figcaption.my-declaration {
+  color: #BB99DD;
+  font-family: "Arial";
+}
+body .container ul.social-medias {
+  list-style: none;
+}
+body .container ul.social-medias li.media button {
+  background-color: transparent;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.5em 1em;
+  transition: 1s;
+  border: 2px solid #9B4BEC;
+  margin: 1.5em 0em;
+}
+body .container ul.social-medias li.media button a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  cursor: pointer;
+  color: #BB99DD;
+  font-family: "Arial";
+  text-decoration: none;
+}
+body .container ul.social-medias li.media button a p {
+  font-size: 1.5em;
+}
+body .container section.github-account-author button {
+  background-color: #9B4BEC;
+  border: none;
+  border-radius: 0.3em;
+  padding: 1em;
+  transition: 1s;
+}
+body .container section.github-account-author button:hover {
+  background-color: #BB99DD;
+  border: none;
+  border-radius: 0.3em;
+  padding: 1em;
+  transition: 1s ease;
+}
+body .container section.github-account-author button a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  cursor: pointer;
+  color: #fff;
+  font-family: "Arial";
+  text-decoration: none;
+}
+body .container section.github-account-author button a p {
+  font-size: 1.2em;
+}
+
+/*# sourceMappingURL=main.css.map */

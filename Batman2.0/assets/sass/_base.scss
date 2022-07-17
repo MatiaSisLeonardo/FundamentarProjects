@@ -1,0 +1,97 @@
+@use './variables' as *;
+
+
+// Functions
+
+@function GetTypograph($property) {
+    @return map-get($m_typographs, $property);
+}
+
+
+// Mixins 
+
+@mixin ElementSelected() {
+    // TODO
+}
+
+@mixin FlexBox($direction, $justify:none, $align:none, $gap:none) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin Grid($rows, $columns, $row_gap, $col_gap, $just_grid: stretch, $alg_grid: stretch, $just_content: stretch, $alg_content: stretch) {
+    display: grid;
+    grid-template-rows: $rows;
+    grid-template-columns: $columns;
+    column-gap: $col_gap;
+    row-gap: $row_gap;
+    justify-content: $just_grid;
+    align-content: $alg_grid;
+    justify-items: $just_content;
+    align-items: $alg_content;
+}
+
+@mixin LinkStyle($cl:#fff, $size:1em, $font:GetTypograph(default)) {
+    color: $cl;
+    font-family: $font;
+    font-size: $size;
+}
+
+
+@mixin NoListStyle() {
+    list-style: none;
+}
+
+@mixin UseTextDecoration($enabled) {
+    @if $enabled {
+        text-decoration: underline;
+    } @else {
+        text-decoration: none;
+    }
+}
+
+@mixin Title($cl:#ff004c, $font:GetTypograph(title), $size:7em, $letter_spa:2px) {
+    color: $cl;
+    font-family: $font;
+    font-size: $size;
+    letter-spacing: $letter_spa;
+}
+
+@mixin Image($height: 100%, $width: 100%, $radius:none) {
+    border-radius: $radius;
+    width: $width;
+}
+
+@mixin Iframe($height: 100%, $width: 100%, $radius:none) {
+    border-radius: $radius;
+    height: $height;
+    width: $width;
+}
+
+
+@mixin Container($font:GetTypograph(default), $width: 100%, $pad: 0em) {
+    font-family: $font;
+    width: $width;
+    padding: $pad;
+}
+
+@mixin ContainerHeader($back_cl:#000, $cl:#fff, $pad:1em 0em 2em, $width:100% ) {
+    background-color: $back_cl;
+    color: $cl;
+    padding: $pad;
+    width: $width;
+}
+
+@mixin Table($back_cl: #000, $border_cl: #000, $width:100%, $collapse:separate, $space:0em 1em) {
+    background-color: $back_cl;
+    border-collapse: $collapse;
+    border-spacing: $space;
+    border-top: 3px solid $border_cl;
+    width: $width;
+}
+
+
+
